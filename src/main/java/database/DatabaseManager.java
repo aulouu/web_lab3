@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class DatabaseManager {
     private Connection connection;
-    private final String user = "s373317";
-    private final String password = "lB4Kx4sgsYZDjzhZ";
+    private final String user = "s367550";
+    private final String password = "Htplca1QwjFcBpNO";
     private final String DATABASE_URL = "jdbc:postgresql://localhost:5432/studs";
     public final String DATABASE_URL_HELIOS = "jdbc:postgresql://pg:5432/studs";
 
@@ -30,6 +30,7 @@ public class DatabaseManager {
         } catch (SQLException e) {
             try{
                 connection = DriverManager.getConnection(DATABASE_URL_HELIOS, user, password);
+                System.out.println("Подключение успешно");
             } catch (SQLException ex) {
                 System.err.println("Невозможно подключиться к базе данных");
                 e.printStackTrace();
@@ -42,9 +43,9 @@ public class DatabaseManager {
     public void createMainBase() throws SQLException {
         try {
             connection.prepareStatement(DatabaseCommands.createTable).execute();
-            System.out.println("таблица создана");
+            System.out.println("Таблица создана");
         } catch (SQLException e) {
-            System.out.println("aaaaaaaaaaaaaa");
+            System.out.println("Ошибка во время создания таблицы");
             e.printStackTrace();
         }
     }
@@ -80,7 +81,7 @@ public class DatabaseManager {
                         resultSet.getString("execution_time")
                 ));
             }
-            System.out.println("коллекция загружена");
+            System.out.println("Коллекция загружена");
             return collection;
         } catch (SQLException e) {
             System.err.println("Коллекция пуста либо возникла ошибка при исполнении запроса");
