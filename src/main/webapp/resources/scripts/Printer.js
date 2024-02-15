@@ -245,8 +245,8 @@ class Printer{
 
         addAttempt(
             [
-                { name: "x", value: (Math.round(x * 1000) / 1000).toString() },
-                { name: "y", value: (Math.round(y * 1000) / 1000).toString() },
+                { name: "x", value: (x.toFixed(3)).toString() },
+                { name: "y", value: (y.toFixed(3)).toString() },
                 { name: "r", value: this.lastR.toString() }
             ]
         )

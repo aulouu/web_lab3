@@ -49,6 +49,13 @@ input[type="text"] {
     font-size: 20px;
 }
 
+.disabled-checkbox {
+    cursor: not-allowed;
+    background-color: #eee;
+    color: #777;
+}
+
+
 select {
     border: #dfd3e3 2px solid;
     border-radius: 8px;
